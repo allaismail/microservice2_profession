@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres-service
+  name: postgres2-service
+  namespace: tp2
   labels:
-    app: postgres
+    app: postgres2
 spec:
   ports:
   - port: 5432
-    name: postgres
+    name: postgres2
   type: ClusterIP
   selector:
-    app: postgres
+    app: postgres2

@@ -1,26 +1,27 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgres-statefulset
+  name: postgres2-statefulset
+  namespace: tp2
   labels:
-    app: postgres
+    app: postgres2
 spec:
-  serviceName: "postgres"
+  serviceName: "postgres2"
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: postgres2
   template:
     metadata:
       labels:
-        app: postgres
+        app: postgres2
     spec:
       containers:
-      - name: postgres
+      - name: postgres2
         image: postgres:12
         envFrom:
         - configMapRef:
-            name: postgres-configuration
+            name: postgres-configuration-m2
         ports:
         - containerPort: 5432
-          name: postgresdb
+          name: postgres2db

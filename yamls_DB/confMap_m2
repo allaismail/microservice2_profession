@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-configuration-m2
+  namespace: tp2
+  labels:
+    app: postgres2
+data:
+  POSTGRES_DB: micro2_db
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: password

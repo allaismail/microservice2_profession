@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fast
+  name: service_micro1
+  namespace: tp2
   labels:
-    app: fast
+    app: micro2
 spec:
   selector:
-    app: fast
+    app: micro2
   ports:
   - port: 8000
   type: LoadBalancer
