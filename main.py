@@ -18,7 +18,7 @@ allow_methods=["*"], # Allows all methods
 allow_headers=["*"], # Allows all headers
 )
 
-@app.post("/api/users/", response_model=_schemas.Contact)
+@app.post("/users/", response_model=_schemas.Contact)
 async def create_contact(
     contact: _schemas.CreateContact,
     db: _orm.Session = _fastapi.Depends(_services.get_db),
@@ -27,7 +27,7 @@ async def create_contact(
 
 
 
-@app.get("/api/users/{contact_id}/", response_model=_schemas.Contact)
+@app.get("/users/{contact_id}/", response_model=_schemas.Contact)
 async def get_contact(
     contact_id: int, db: _orm.Session = _fastapi.Depends(_services.get_db)
 ):

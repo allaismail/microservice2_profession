@@ -8,8 +8,10 @@ class _BaseContact(_pydantic.BaseModel):
 
 class Contact(_BaseContact):
     id: int
-    date_created: _dt.datetime
 
     class Config:
         orm_mode = True
+
+class CreateContact(Contact):
+    pass
 
